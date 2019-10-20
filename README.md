@@ -3,7 +3,7 @@ English:Simple PHP source code made to retrieve the sourcecode from a website.
 
 Work-In-Progress.
 
-3files:
+4files:
 
 SMGSC.php
 
@@ -11,12 +11,16 @@ prism.css
 
 prism.js
 
+download.php
+
 
 SMGSC.php (String Manolo Get Source Code) is the only file you need.
 
 prism.css Add style to the source code.
 
 prism.js Highligth the source code shown at the website.
+
+download.php Download the source code from the link you chose inside it.
 
 I'm using prismjs to highligth the code:
 
@@ -29,12 +33,15 @@ https://prismjs.com/download.html#themes=prism-dark&languages=markup+css+clike+c
 
 -You can add the prism.js file at subfolder and name it js then add the prism.js file inside.
 
+-You can add the download.php file at subfolder and name it php then add the download.php file inside.
 
 The webpage folder should be:
 
 css (folder)
 
 js (folder)
+
+php (folder)
 
 SMGSC.php (file)
 
@@ -45,13 +52,15 @@ Español:Codigo simple escrito en PHP para obtener el código fuente de una pág
 Trabajo-En-Curso.
 
 
-3archivos:
+4archivos:
 
 SMGSC.php
 
 prism.css
 
 prism.js
+
+download.php
 
 
 SMGSC.php (String Manolo Get Source Code) es el único archivo que necesitas.
@@ -60,6 +69,7 @@ prism.css Estiliza el código fuente mostrado en la web.
 
 prism.js Resalta el código fuente mostrado en la web.
 
+download.php Descarga el código fuente de la página web que le indiques.
 
 Uso prismjs para resaltar el codigo:
 
@@ -72,11 +82,14 @@ https://prismjs.com/download.html#themes=prism-dark&languages=markup+css+clike+c
 
 -Puedes añadir el archivo prism.js en una subcarpeta, llamarla js y añadir el archivo prism.js dentro.
 
+-Puedes añadir el archivo download.php en una subcarpeta, llamarla php y añador el archivo download.php dentro.
 
 La carpeta de tu página web debería ser:
 
 css (carpeta)
 
 js (carpeta)
+
+php (carpeta)
 
 SMGSC.php (archivo)
