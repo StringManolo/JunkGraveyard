@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!-- Indica que es un documento de HTML5 -->
+
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
+<!-- Fija la vista para Android -->
+
+<meta charset="UTF-8">
+<!-- Indica el encoding del documento para que el navegador lo reconozca. -->
+
+<html>
+<!-- Inicio de la página web -->
+
+
+<head>
+<!-- Inicio de la cabecera, se usa para codigo que no va a ver el usuario directamente sobre la página -->
+
+<title>Interfaz</title>
+<!-- Indica el título de la página, por ejemplo Nueva Pestaña es un título por defecto -->
+
+<script>
+/* A partir de aquí deja de ser código HTML y pasa a ser código Javascript */
+
+function CambiarColorRectangulo()
+/* Se crea un función(Es como un programa nuevo) y se le da un nombre.
+Entre los paréntesis ( ) pueden ir datos para función. En este caso no le puse */
+
+{ 
+/* Todo lo que esté dentro de estos paréntesis pertenece a la función.
+Es lo que la función va a hacer. */
+
+var Rectangulo1 = document.getElementById('Rectangulo1'); 
+/* Guarda con el nombre Rectangulo1 un rectángulo que se encuentra más adelante.
+Por si no te queda claro y por simplificar, todo este código javascript de la función se ejecutará
+mucho más adelante. */
+
+var Rectangulo2 = document.getElementById('Rectangulo2'); 
+/* Lo mismo que lo anterior pero con otro rectángulo */
+
+var r = Math.floor(Math.random() * 255); 
+/* Se guarda un número aleatorio entre 0 y 255. */
+
+var g = Math.floor(Math.random() * 255); 
+/* Se guarda otro número aleatorio*/ 
+
+var b = Math.floor(Math.random() * 255); 
+/* Se guarda otro número aleatorio */
+
+Rectangulo1.style.fill = 'rgb(' + r + ', ' + g + ' , ' + b + ')'; 
+/* Se le añade un estilo al rectángulo1 con los 3 númeos aleatorios.
+Cada número equivale a un color. Se mezclan los 3 colores para obtener un color nuevo.
+La r (red) equivale a la cantidad de rojo. 0 = Sin rojo, 255 = Mucho Rojo. 
+La g (green) lo mismo pero para el color verde.
+La b (blue) lo mismo pero para el azul.
+*/
+
+Rectangulo2.style.fill = 'rgb(' + r + ', ' + g + ' , ' + b + ')';
+/* Los mismos colores pero para otro rectángulo */
+
+} 
+/* Se acaba lo que hace la función.
+
+Como resumen, esta función lo que va a hacer es:
+Cada vez que le toques con el dedo a un rectángulo, se pintarán
+los 2 rectángulos de un color aleatorio.
+*/
+
+</script>
+<!-- Ya se acabó el código de javascript, asique estamos otra vez en el HTML. -->
+
+</head>
+<!-- Se cierra la cabecera -->
+
+<body>
+<!-- Se abre el cuerpo del documento donde se define todo lo que se va a ver -->
+
+<div class="Web" id="Banner_StringManolo" style="text-align:center;">
+<!-- Se crea un contenedor, le damos varios nombres identificadores e indicamos que todo 
+lo que pongamos dentro se centre -->
+
+<div class = "BannerFijadoAbajo">
+<!-- Otro contenedor para otro Banner(El rectángulo de adorno) -->
+
+<svg style = "display:block" width="100%" height="20">
+<!-- Svg son imágenes que crea el navegador y crecen automáticamente con el zoom -->
+
+<rect width="100%" height="22" style="fill:rgb(0,0,0);stroke-width:1%;stroke:rgb(0,0,0)" id="Rectangulo2"
+onclick="CambiarColorRectangulo();vibrate(100);"/>
+<!-- Crea un rectángulo que ocupe todo el ancho de pantalla, lo pintamos de negro y le ponemos borde también negro 
+En el onclick(Tras hacer click en el rectángulo), se activa el javascript que acabamos de ver, para cambiar el color por uno aleatorio.
+Al hacer click también llamamos a otro código de javascript que veremos más adelante.
+-->
+
+</svg>
+<!-- Acabamos de usar SVG -->
+
+</div>
+<!-- Cerramos el contenedor del banner de la parte inferior. -->
+
+<div class = "BannerFijado">
+<!-- Contenedor para el banner de arriba -->
+
+<svg style = "display:block" width="100%" height="40"> 
+<!-- Iniciamos el area límite de SVG sobre la que crear gráficos -->
+
+<g>
+<!-- Contenedor para agrupar varios SVG distintos. En concreto para poder dibujar texto sobre el rectángulo -->
+<rect width="100%" height="42" style="fill:rgb(0,0,0);stroke-width:1%;stroke:rgb(0,0,0)" id="Rectangulo1"
+onclick="CambiarColorRectangulo();vibrate(50);"/>
+
+
+<!-- Desactivado para conexiones lentas y testeos. Lo dejo como ejemplo de fuente custom.
+<defs>
+<style>
+@import url("http://fonts.googleapis.com/css?family=Audiowide"); 
+<text x="50%" y="50%" font-family="Audiowide" font-size="30%" fill="white">MiPrimeraApp</text> 
+</style> 
+</defs> 
+-->
+
+<style><![CDATA[svg text{stroke:none}]]></style>
+<!-- Elimina los bordes del texto SVG -->
+
+<text x="50%" y="50%" font-size="90%" fill="white" dominant-baseline="middle" text-anchor="middle">MiPrimeraApp</text> 
+<!-- Crea texto SVG (escala junto al rectángulo) -->
+</g>
+<!-- La g sirve para meter el texto dentro del rectángulo -->
+
+  Tu navegador no soporta Scalable Vector Graphics.
+<!-- Si el navegador o WebView no pudiese mostrar los SVG se mostraría este mensaje -->
+</svg>
+<!-- Se acabó el SVG -->
+
+</div>
+</div>
+<!-- Cerrando contenedores en los que creamos gráficos SVG -->
+
+<br><br><br>
+<!-- Saltos de línea -->
+
+<div id="content-window" class="WebIncrustada">
+</div><br>
+<!-- Contenedor en el que se cargará una página web -->
+
+<input type="text" id="url_a" value="http://www.example.com"><br>
+<!-- Un input para escribir una URL -->
+
+<input id="btn" type="button" value="Ver" />
+<!-- Un botón que se usará para ver una Web -->
+
+ <input id="btn_a" type="button" value="Visitar" />
+<br><br>
+<!-- Un botón que se usará para ir a una Web -->
+
+
+<div class="ContenidoDelSitio" >
+<br><br><br><br><br>
+
+<!-- Estilos para hacer más bonita y ordenada la web -->
+<style>
+.BannerFijado{
+position: fixed;
+left: 0;
+right: 0;
+top: 0;
+}
+
+.BannerFijadoAbajo{
+position: fixed;
+left: 0;
+right: 0;
+bottom: 0;
+}
+
+.ContenidoDelSitio{
+margin: auto;
+width: 50%;
+height: 50%;
+padding: 10px;
+text-align: center;
+bottom: 0
+margin-left: auto;
+margin-right: auto;
+}
+
+.WebIncrustada{
+width: 100%;
+height: 200%;
+text-align left;
+border: 1px solid green;
+}
+</style>
+
+<script>
+/* Javascript: */
+
+
+btn.onclick = 
+function(){
+var temp = document.getElementById("url_a").value;
+document.getElementById("content-window").innerHTML='<object type="text/html" data="'+temp+'"></object>'; 
+/* Si se hace click en el botón Ver, se pega el HTML de la página web que ponga el usuario. 
+Necesita mejoras para compatibilidad. */
+
+
+btn_a.onclick =
+function()
+{
+window.location = temp;
+}
+/* Si se le da al botón Ir, se abre la página en el WebView */
+
+} 			
+</script>
+
+<script>
+/* Con esta función haremos vibrar el Smartphone. */
+
+function vibrate(milliseconds)
+{
+Android.Vibrate(milliseconds);
+} /* Llama al método Vibrate de Java */
+
+</script>
+</body> 
+</html>
